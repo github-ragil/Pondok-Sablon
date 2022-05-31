@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
    
@@ -38,7 +65,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="#">
 					<img src="images/logo.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,9 +73,9 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-						<li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#slides">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#product">Product</a></li>
+						<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 						
 					</ul>
 				</div>
@@ -66,7 +93,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Pondok Sablon</strong></h1>
-							<p class="m-b-40">Est. From 2005</p>
+							<p class="m-b-40">Screen Printing Equipments </p> <p class="m-b-40">Est. From 2005</p>
 						<!-- 	<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#menu-box">Reservation</a></p> -->
 						</div>
 					</div>
@@ -78,7 +105,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Pondok Sablon</strong></h1>
-							<p class="m-b-40">Est. From 2005</p>
+							<p class="m-b-40">Screen Printing Equipments </p> <p class="m-b-40">Est. From 2005</p>
 							<!-- <p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#menu-box">Reservation</a></p> -->
 						</div>
 					</div>
@@ -90,8 +117,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Pondok Sablon</strong></h1>
-							<p class="m-b-40">Est. From 2005</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#menu-box" id="back-to-top2" title="Back to top2" style="display: none;">Reservation</a></p>
+							<p class="m-b-40">Screen Printing Equipments </p> <p class="m-b-40">Est. From 2005</p>
 						</div>
 					</div>
 				</div>
@@ -123,14 +149,14 @@
 	<!-- End QT -->
 	
 	<!-- Start Menu -->
-	<a name="product"></a>
-	<div class="menu-box">
+	
+	<div class="menu-box" id="product">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Special Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>Product</h2>
+						<p>Screen Printing Equipments</p>
 					</div>
 				</div>
 			</div>
@@ -139,43 +165,42 @@
 					<div class="special-menu text-center">
 						<div class="button-group filter-button-group">
 							<button class="active" data-filter="*">All</button>
-							<button data-filter=".drinks">Drinks</button>
-							<button data-filter=".lunch">Lunch</button>
-							<button data-filter=".dinner">Dinner</button>
+							<button data-filter=".water">Water Based</button>
+							<button data-filter=".solvent">Solvent Based</button>
 						</div>
 					</div>
 				</div>
 			</div>
 				
 			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-4 col-md-6 special-grid water">
 					<div class="gallery-single fix">
 						<img src="images/img-01.jpg" class="img-fluid" alt="Image">
 						<div class="why-text">
-							<h4>Special Drinks 1</h4>
+							<h4>Special water 1</h4>
 							<p>Sed id magna vitae eros sagittis euismod.</p>
 							<!-- <h5> $7.79</h5> -->
 						</div>
 					</div>
 				</div>
 				
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-4 col-md-6 special-grid water">
 					<div class="gallery-single fix">
 						<img src="images/img-02.jpg" class="img-fluid" alt="Image">
 						<div class="why-text">
-							<h4>Special Drinks 2</h4>
+							<h4>Special Water 2</h4>
 							<p>Sed id magna vitae eros sagittis euismod.</p>
 							<!-- <h5> $9.79</h5> -->
 						</div>
 					</div>
 				</div>
 				
-				<div class="col-lg-4 col-md-6 special-grid drinks">
+				<div class="col-lg-4 col-md-6 special-grid water">
 					<div class="gallery-single fix">
 						<img src="images/img-03.jpg" class="img-fluid" alt="Image">
 						<div class="why-text">
 							<h4>Special Drinks 3</h4>
-							<p>Sed id magna vitae eros sagittis euismod.</p>
+							<p>Sed id Water vitae eros sagittis euismod.</p>
 							<!-- <h5> $10.79</h5> -->
 						</div>
 					</div>
@@ -302,7 +327,7 @@
 	 End Gallery -->
 	
 	
-	<!-- Start Customer Reviews -->
+	<!-- Start Customer Reviews 
 	<div class="customer-reviews-box">
 		<div class="container">
 			<div class="row">
@@ -357,7 +382,7 @@
 	</div>
 	<!-- End Customer Reviews -->
 	
-	<!-- Start About -->
+	<!-- Start About 
 	<div class="about-section-box">
 		<div class="container">
 			<div class="row">
@@ -370,7 +395,7 @@
 						<h4>Little Story</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
 						<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
-						<!-- <a class="btn btn-lg btn-circle btn-outline-new-white" href="#product">Reservation</a> -->
+						<!-- <a class="btn btn-lg btn-circle btn-outline-new-white" href="#product">Reservation</a> 
 					</div>
 				</div>
 			</div>
@@ -379,33 +404,33 @@
 	<!-- End About -->
 	
 	<!-- Start Contact info -->
-	<div class="contact-imfo-box">
+	<div class="contact-imfo-box" id="about">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
 					<i class="fa fa-volume-control-phone"></i>
 					<div class="overflow-hidden">
-						<h4>Phone</h4>
+						<h4>Whatsapp</h4>
 						<p class="lead">
-							+01 123-456-4590
+							+62 858 103 200 99
 						</p>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<i class="fa fa-envelope"></i>
-					<div class="overflow-hidden">
-						<h4>Email</h4>
+					<a href="https://www.instagram.com/pondoksablon.id/"><i class="fa fa-instagram"></i></a>
+					<div class="overflow-hidden"> 
+						<h4>Instagram</h4>
 						<p class="lead">
-							yourmail@gmail.com
+							@Pondoksablon.id
 						</p>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<i class="fa fa-map-marker"></i>
+					<a href="https://goo.gl/maps/oX5wJYJY52hMYbhf9"><i class="fa fa-map-marker"></i></a>
 					<div class="overflow-hidden">
 						<h4>Location</h4>
 						<p class="lead">
-							800, Lorem Street, US
+							Pondok Sablon, Bekasi
 						</p>
 					</div>
 				</div>
